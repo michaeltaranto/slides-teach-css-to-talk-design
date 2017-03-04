@@ -65,6 +65,12 @@ gulp.task('fonts', ['clean:fonts'], function() {
     .pipe(connect.reload());
 });
 
+gulp.task('examples', ['clean:examples'], function() {
+  return gulp.src('examples/**/*')
+    .pipe(gulp.dest('dist/examples'))
+    .pipe(connect.reload());
+});
+
 gulp.task('clean', function(done) {
   del('dist', done);
 });
@@ -79,6 +85,10 @@ gulp.task('clean:js', function(done) {
 
 gulp.task('clean:css', function(done) {
   del('dist/build/build.css', done);
+});
+
+gulp.task('clean:examples', function(done) {
+  del('dist/examples', done);
 });
 
 gulp.task('clean:images', function(done) {
@@ -116,7 +126,7 @@ gulp.task('deploy', ['build'], function(done) {
   ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
 });
 
-gulp.task('build', ['js', 'html', 'css', 'images', 'fonts']);
+gulp.task('build', ['js', 'html', 'css', 'images', 'fonts', 'examples']);
 
 gulp.task('serve', ['open', 'watch']);
 
