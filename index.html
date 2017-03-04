@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Teach CSS to talk like a designer</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h1 class="emoji large">👩‍💻🎓👨‍🎨</h1>
+        <h1>Teaching CSS to<br/>talk like a designer</h1>
+      </section>
+      <section>
+        <h2>Developers & designers often<br/>speak different languages</h2>
+      </section>
+      <section>
+        <h2>CSS gives us the illusion<br/>it understands design</h2><br>
+        <h1 class="emoji">🐇 <span style="display: inline-block;transform: rotate(180deg)">🎩</span></h1>
+      </section>
+      <section>
+        <h2>Taunting us with terms like<br/><code>`line-height`</code> & <code>`baseline`</code></h2>
+      </section>
+      <section>
+        <h2>How would you style a<br/>21px heading over 27px line height?</h2>
+      </section>
+      <section>
+        <pre><code class="language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+}
+</code></pre>
+      </section>
+      <section>
+        <pre><code class="language-html">&lt;div class="card"&gt;
+  &lt;h1 class="card-heading"&gt;Heading&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      <section>
+        <h1 class="emoji large">😯</h1>
+        <div class="row">
+          <div>
+            <h6>CSS &ldquo;line-height&rdquo;</h6>
+            <div class="card baseline">
+              <h2 class="card-title line-height">Heading</h2>
+            </div>
+          </div>
+          <div> 
+            <h6>Typographic line height</h6>
+            <div class="card baseline">
+              <h2 class="card-title line-height"><span class="shift">Heading</span></h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Devs are left to &ldquo;CSS&rdquo; until it works</h2><br>
+        <h1 class="emoji large">🤼‍♂️</h1>
+      </section>
+      <section>
+        <pre class="bullet-toggle"><code class="bullet language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+}</code><code class="bullet language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+  padding-top: 1px;
+}</code><code class="bullet language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+  padding-top: 2px;
+}</code><code class="bullet language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+  padding-top: 3px;
+}</code><code class="bullet language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+  padding-top: 4px;
+}</code><code class="bullet language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+  padding-top: 4px;
+  margin-bottom: -1px;
+}</code><code class="bullet language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+  padding-top: 4px;
+  margin-bottom: -2px;
+}</code><code class="bullet language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+  padding-top: 4px;
+  margin-bottom: -3px;
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>System left behind is fragile</h2><br>
+        <h1 class="emoji large">🐣</h1>
+      </section>
+      <section>
+        <h2>Thrown away the designer&rsquo;s thinking</h2>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h2>Good design is not an accident</h2>
+        <h4>There&rsquo;s a &lsquo;why&rsquo; for everything</h4>
+      </section>
+      <section>
+        <h2>Grid systems, type hierarchy, etc</h2><br>
+        <h1 class="emoji">📐 🖋  </h1>
+      </section>
+      <section>
+        <h2>We start with the best intentions</h2>
+        <pre><code class="language-css">@row-height: 9px;
+@column-width: 60px;
+@column-gutter: 20px;
+
+@heading-size: 21px;
+@heading-line-height: 27px;
+</code></pre>
+      </section>
+      <section>
+        <h4>
+          <pre><code class="bullet language-css">.card-heading {
+  font-size: @heading-size;
+  line-height: @heading-line-height;
+  padding-top: 4px;
+  margin-bottom: -3px;
+}</code></pre>
+        </h4>
+        <h2 class="emoji">😓</h2>
+      </section>
+      <section>
+        <h2>How can we fix this?</h2><br>
+        <div class="row">
+          <div>
+            <h6>CSS &ldquo;line-height&rdquo;</h6>
+            <div class="card baseline">
+              <h2 class="card-title line-height">Heading</h2>
+            </div>
+          </div>
+          <div> 
+            <h6>Typographic line height</h6>
+            <div class="card baseline">
+              <h2 class="card-title line-height"><span class="shift">Heading</span></h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h1 class="emoji large">👇</h1><br>
+        <h2>Text needs to move down</h2>
+      </section>
+      <section>
+        <h2>Height of the descender*</h2>
+        <div class="card baseline">
+          <h2 class="card-title descender">Heading</h2>
+        </div>
+        <h6>*not available in CSS</h6>
+        <h1 class="emoji">😔</h1>
+      </section>
+      <section>
+        <h2>We have to calculate this manually</h2>
+        <iframe src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/pixel-nudge/"></iframe>
+      </section>
+      <section>
+        <pre><code class="language-css">@heading-descender-height: 3px;
+</code></pre>
+      </section>
+      <section>
+        <h2>Font centered to line height</h2>
+        <div class="card baseline">
+          <h2 class="card-title split">Heading</h2>
+        </div>
+      </section>
+      <section>
+        <h2>Half the difference betweeen<br/><code>line-height</code> and <code>font-size</code></h2><br>
+        <h4>(27px - 21px) / 2 = 3px</h4>
+      </section>
+      <section>
+        <pre><code class="language-css">@heading-line-height-offset: 3px;
+</code></pre>
+      </section>
+      <section>
+        <h5>
+          <pre><code class="language-css">@heading-offset: (@heading-descender-height + @heading-line-height-offset);</code></pre>
+        </h5>
+        <h5>
+          <pre><code class="language-css">.card-heading {
+  font-size: @heading-size;
+  line-height: @heading-line-height;
+  transform: translateY(@heading-offset);
+}
+</code></pre>
+        </h5>
+      </section>
+      <section>
+        <h2>Starting to align with the designer&rsquo;s intent</h2>
+        <div class="card baseline">
+          <h2 class="card-title line-height"><span class="shift">Heading</span></h2>
+        </div>
+        <h1 class="emoji">😏</h1>
+      </section>
+      <section>
+        <h2>There will be multiple headings</h2>
+      </section>
+      <section>
+        <pre><code class="language-css">.headingText() {
+  font-size: @heading-size;
+  line-height: @heading-line-height;
+  transform: translateY(@heading-offset);
+}
+
+.card-heading {
+  .headingText();
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>Design and dev can start<br/>talking a common language</h2>
+        <h2>
+          <pre><code class="language-css">.headingText()
+</code></pre>
+        </h2>
+      </section>
+      <section>
+        <h2>&hellip;but solution is hardcoded</h2>
+        <h5>
+          <pre><code class="language-css">/* Design principles */
+@heading-size: 21px;
+@heading-line-height: 27px;
+
+/* Offset hacks */
+@heading-descender-height: 3px;
+@heading-line-height-offset: 3px;
+</code></pre>
+        </h5>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h2>Designers are still having to<br/>translate principles into pixels</h2><br>
+        <h1 class="emoji">👩‍🎨 📝 👨‍💻</h1>
+      </section>
+      <section>
+        <h2>Let&rsquo;s reverse engineer<br/>what&rsquo;s behind these pixels</h2><br>
+        <h1 class="emoji large">👷‍♀️</h1>
+      </section>
+      <section>
+        <h2>Line height is simply a row span</h2>
+        <h5>
+          <pre><code class="language-css">@heading-line-height: 27px;
+</code></pre>
+        </h5>
+      </section>
+      <section>
+        <pre><code class="language-css">@row-height: 9px;
+
+.headingText() {
+  font-size: 21px;
+  line-height: (3 * @row-height);
+  transform: translateY(@heading-offset);
+}    
+</code></pre>
+      </section>
+      <section>
+        <h2>Where does the font size come from?</h2>
+        <h5>
+          <pre><code class="language-css">@heading-font-size: 21px;
+</code></pre>
+        </h5>
+      </section>
+      <section>
+        <h1 style="font-size: 7em; height: 0.7em; margin: 0 20px; width: 90%; text-align:left">&ldquo;</h1>
+        <h4>The values in the hierarchy are all a scale of a base size,</h4>
+        <h4>I tend to work off 10px as it scales cleanly</h4><br>
+        <h1 style="font-size: 7em; height: 0.3em; margin: 0 20px; width: 90%; text-align:right">&rdquo;</h1>
+      </section>
+      <section>
+        <pre><code class="language-css">@base-font-size: 10px;
+
+.headingText() {
+  font-size: (2.1 * @base-font-size);
+  line-height: (3 * @row-height);
+  transform: translateY(@heading-offset);
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>Extract the principles</h2>
+        <h5>
+          <pre><code class="language-css">/* Design principles */
+@base-font-size: 10px;
+@row-height: 9px;
+@heading-scale: 2.1;
+@heading-row-span: 3;
+
+/* Offset hacks */
+@heading-descender-height: 3px;
+@heading-line-height-offset: 3px;
+@heading-offset: (@heading-descender-height + @heading-line-height-offset);
+</code></pre>
+        </h5>
+      </section>
+      <section>
+        <h2 class="bullet-toggle"><span class="bullet">Recap: Heading at 21px over 27px line height</span><span class="bullet">Recap: Heading at 2.1x over 3 grid rows</span></h2>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h2>We&rsquo;re capturing principles rather than pixels</h2>
+      </section>
+      <section>
+        <h2>Implement another hierarchy level?</h2>
+      </section>
+      <section>
+        <h2>Add support for subheadings</h2>
+        <h5>
+          <pre><code class="language-css">/* Design principles */
+@subheading-scale: 1.8;
+@subheading-row-span: 3;
+
+/* Offset hacks */
+@subheading-descender-height: ???;
+@subheading-line-height-offset: ???;
+@subheading-offset: ???;
+</code></pre>
+        </h5>
+      </section>
+      <section>
+        <h2>Express the offset as a scale of the type</h2><br>
+        <h1 class="emoji large">👨‍🏫</h1>
+      </section>
+      <section>
+        <h2>CSS can help us here &mdash; <code>em</code> units</h2><br>
+        <h1 class="emoji large">🙌</h1>
+      </section>
+      <section>
+        <h2>Calculate the descender height as scale</h2>
+        <iframe src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/scale-nudge/"></iframe>
+      </section>
+      <section>
+        <h2>Rather than defining for each level</h2>
+        <pre><code class="language-css">@heading-descender-height: ???;
+@subheading-descender-height: ???;
+</code></pre>
+      </section>
+      <section>
+        <h2>One descender scale per font family</h2>
+        <pre><code class="language-css">@roboto-descender-scale: 0.15;
+</code></pre>
+      </section>
+      <section>
+        <h6>
+          <pre><code class="language-css">/* Offset hacks */
+@roboto-descender-scale: 0.15;
+@roboto-offset: @roboto-descender-scale * @base-font-size;
+
+@heading-line-height-offset: 3px;
+@heading-offset: (@roboto-offset * @heading-scale) + @heading-line-height-offset;
+
+@subheading-line-height-offset: ???;
+@subheading-offset: (@roboto-offset * @subheading-scale) + @subheading-line-height-offset;</code></pre>
+        </h6><br>
+        <h4>This is better, but you know&hellip; 😔</h4>
+      </section>
+      <section>
+        <h2>Do this for every level of the hierarchy?</h2><br>
+        <h1 class="emoji large">🤔</h1>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h1>Basekick</h1>
+        <h6><a href="https://github.com/michaeltaranto/basekick">(github.com/michaeltaranto/basekick)</a></h6>
+      </section>
+      <section>
+        <h2>Translate design principles into<br/>CSS rules to align type </h2><br>
+        <h1 class="emoji">👨‍🎨 👉 👩‍🏫 👉 👨‍💻</h1>
+      </section>
+      <section>
+        <pre><code class="language-css">.headingText() {
+  .basekick(
+     @heading-scale,
+     @roboto-descender-scale,
+     @heading-row-span,
+     @row-height,
+     @base-font-size
+  );
+}
+</code></pre>
+      </section>
+      <section>
+        <pre><code class="language-css">.card-heading {
+  font-size: 21px;
+  line-height: 27px;
+  transform: translateY(.27935714em);
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>Transform doesn&rsquo;t push neighbouring elements</h2>
+      </section>
+      <section>
+        <h2>Preserves CSS properties for semantic use</h2>
+      </section>
+      <section>
+        <h2>Ability to edit design primitives confidently</h2>
+        <pre><code class="language-css">@heading-scale: 2.1;
+@heading-row-span: 3;
+
+@subheading-scale: 1.8;
+@subheading-row-span: 3;
+</code></pre>
+        <h1 class="emoji">👩‍💻 + 👨‍🎨 = 👫</h1>
+      </section>
+      <section>
+        <h2>Putting it to the test...</h2>
+        <iframe src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/playground/"></iframe>
+      </section>
+      <section>
+        <pre class="bullet-toggle"><code class="bullet language-css">.basekick(
+   @heading-scale,
+   @roboto-descender-scale,
+   @heading-row-span,
+   @row-height,
+   @base-font-size
+);</code><code class="bullet language-css">.basekick(
+   @heading-scale,
+   @zapfino-descender-scale,
+   @heading-row-span,
+   @row-height,
+   @base-font-size
+);</code><code class="bullet language-css">.basekick(
+   @heading-scale,
+   @papyrus-descender-scale,
+   @heading-row-span,
+   @row-height,
+   @base-font-size
+);
+</code></pre>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h2>Design conversations are now <br/>centered around common language</h2><br>
+        <h1 class="emoji">👌</h1>
+      </section>
+      <section>
+        <h2>2½ years into our journey</h2>
+      </section>
+      <section>
+        <h2>Hierarchy has grown</h2>
+        <h6>
+          <pre><code class="language-css">@hero-type-row-span: 5;
+@hero-type-scale: 4.2;
+
+@headline-type-row-span: 4;
+@headline-type-scale: 2.8;
+
+@heading-type-row-span: 3;
+@heading-type-scale: 2.1;
+
+@subheading-type-row-span: 3;
+@subheading-type-scale: 1.8;
+
+@standard-type-row-span: 2;
+@standard-type-scale: 1.4;
+
+@small-type-row-span: 2;
+@small-type-scale: 1.2;
+</code></pre>
+        </h6>
+      </section>
+      <section>
+        <h2>Added responsive variants with ease</h2>
+        <h5>
+          <pre><code class="language-css">@standard-type-row-span: 2;
+@standard-type-scale: 1.4;
+
+@standard-type-row-span-mobile: 3;
+@standard-type-scale-mobile: 1.8;
+</code></pre>
+        </h5>
+      </section>
+      <section>
+        <h2>System has been adopted in over 10 projects</h2>
+        <h5>(across multiple frameworks)</h5>
+      </section>
+      <section>
+        <h2>Proof is in <a class="underline" href="https://www.seek.com.au">production</a></h2><br>
+        <h1 class="emoji large">🕵️</h1>
+      </section>
+      <section><br>
+        <h2>Most developers don&rsquo;t know basekick exists</h2><br>
+        <h1 class="emoji large">👻</h1>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h2>CSS is speaking the same<br/>language as our designers</h2>
+      </section>
+      <section>
+        <h2>Powerful mindset change for both disciplines</h2>
+        <h5>Striving for a common language everywhere</h5>
+      </section>
+      <section>
+        <h1 class="emoji">💡</h1>
+        <h2>Apply this thinking to our markup</h2>
+        <h1>
+          <pre class="tight"><code class="language-html">&lt;/&gt;
+</code></pre>
+        </h1>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h2>Teach HTML to talk design</h2>
+      </section>
+      <section>
+        <h2>Component abstractions can help<br/>define a design language</h2><br>
+        <h1 class="emoji">⚛️</h1>
+      </section>
+      <section>
+        <h2>
+          <pre><code class="language-html">&lt;Text heading&gt;Heading&lt;/Text&gt;
+</code></pre>
+        </h2>
+      </section>
+      <section>
+        <h2>Rather than discuss code like this:</h2>
+        <pre><code class="language-html">&lt;div class="card"&gt;
+  &lt;h1 class="card-heading"&gt;Heading&lt;/h1&gt;
+  &lt;p class="card-body"&gt;The cards content&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      <section>
+        <h2>We can more declaratively compose this:</h2>
+        <pre><code class="language-html">&lt;Card&gt;
+  &lt;Text heading&gt;My Heading&lt;/Text&gt;
+  &lt;Text&gt;The cards content&lt;/Text&gt;
+&lt;/Card&gt;
+</code></pre>
+      </section>
+      <section>
+        <h2>More approachable code</h2><br>
+        <h1 class="emoji large">👶</h1>
+      </section>
+      <section>
+        <h2>Match designer&rsquo;s intent out of the box</h2><br>
+        <h1 class="emoji large">📦</h1>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h2>Help find your team&rsquo;s design language</h2>
+      </section>
+      <section>
+        <div class="me"></div>
+        <div class="column">
+          <h6 class="icon twitter"><a href="https://twitter.com/michaeltaranto">@michaeltaranto</a></h6>
+          <h6 class="icon github"><a href="https://github.com/michaeltaranto">github.com/michaeltaranto</a></h6>
+          <h6 class="icon slides"><a href="https://bit.ly/teach-css-to-talk-design">bit.ly/teach-css-to-talk-design</a></h6>
+        </div>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
