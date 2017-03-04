@@ -1,0 +1,7 @@
+{
+  "name": "presentation-design-system-engineering-lead",
+  "version": "0.0.0",
+  "dependencies": {
+    "prism": "gh-pages"
+  }
+}

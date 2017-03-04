@@ -1,0 +1,230 @@
+// New to Stylus? Check out http://learnboost.github.io/stylus
+// Use modern CSS thanks to Autoprefixer: https://github.com/ai/autoprefixer
+
+// Import CSS from "node_modules" and "bower_components"
+// thanks to Stylus' "import css" and "paths" options
+
+@import 'prism/themes/prism-okaidia.css'
+// Check out "bower_components/prism/themes/" for available themes
+
+@font-face
+  font-family: 'Roboto'
+  src: url('../fonts/Roboto-Light.ttf')
+
+.bespoke-slide
+  font-family: 'Roboto', cursive
+  width: 1024px
+  height: 768px
+  margin-left: -(@width / 2)
+  margin-top: -(@height / 2)
+
+.emoji
+  margin: 0
+  padding: 0
+  &.large
+    font-size: 3.9em
+    line-height: 0.9em
+
+iframe
+  border: 0
+  width: 500px
+  height: 306px
+  margin: 20px
+
+h1
+  font-family: 'Roboto', cursive
+  font-style: normal
+
+h2
+  font-family: 'Roboto', cursive
+  font-size: 1.3em
+  line-height: 1.2em
+
+pre
+  margin: 0 auto!important
+
+pre.tight
+  padding: 0
+
+code
+  font-family: consolas !important
+  font-size: 0.8em
+
+code, pre
+  line-height: 1.2 !important
+
+.row
+  display: flex
+  flex-wrap: nowrap
+
+.card
+  height: 200px
+  width: 400px
+  margin: 30px
+  text-align: left
+  background-color: #fff
+  color: #000
+  overflow: hidden
+  .card-title
+    margin: 0
+    padding: 0
+    font-size: 63px
+    line-height: 81px
+    display: inline-block
+    position: relative
+    z-index: 0
+    &.line-height
+      background-color: #b5e6fd
+    &.descender::before
+      content: ' '
+      position: absolute
+      background-color: #b5e6fd
+      top: 63px
+      right: 0px
+      left: 0px
+      bottom: 4px
+      z-index: -1
+    &.split
+      position: relative
+      top: -5px
+      &::before
+        content: ' '
+        position: absolute
+        background-color: #b5e6fd
+        top: 5px
+        right: 0px
+        left: 0px
+        height: 9px
+        z-index: -1
+      &::after
+        content: ' '
+        position: absolute
+        background-color: #b5e6fd
+        height: 9px
+        right: 0px
+        left: 0px
+        bottom: -5px
+        z-index: -1
+    .shift
+      display: inline-block
+      transform: translateY(17px)
+
+.baseline
+  position: relative
+  &::after
+    content: ' '
+    position: absolute
+    top: 0px
+    right: 0px
+    left: 0px
+    bottom: 0px
+    background-size: 100% 54px
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0784314) 50%, rgba(0, 0, 0, 0) 8%, rgba(0, 0, 0, 0) 100%)
+    z-index: 20000
+    pointer-events: none
+
+.bullet-toggle
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  padding: 0
+  .bespoke-bullet
+    position: absolute
+    transition: opacity .2s ease
+    opacity: 0
+  .bespoke-bullet-current
+    opacity: 1
+
+.full
+  width: 100%
+
+.language-javascript,
+.language-html
+  .token
+    &.string
+    &.attr-value
+      color: #D1C4E9
+    &.keyword
+    &.attr-name
+      color: #5AEAFB
+    &.punctuation
+      color: #a8a8a8
+    &.regex
+    &.number
+      color: #ff8a80
+    &.function
+    &.tag
+      color: #69F0AE
+
+.language-css
+  .token
+    &.property
+      color: #69F0AE
+    &.function
+      color: #D1C4E9
+    &.punctuation
+      color: #a8a8a8
+    &.atrule
+      color: #fff
+      .punctuation
+        color: #a8a8a8
+    &.selector
+    &.rule
+      color: #5AEAFB
+
+.bespoke-parent
+  background-color: #34495e
+  font-size: 2em
+
+.bespoke-backdrop.emphatic
+  background-color: #69F0AE
+
+.emphatic
+  background-color: transparent
+  color: #34495e
+
+.me
+  background: url('../images/me.png') center center no-repeat
+  background-size: 200px 200px
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  margin-bottom: 18px
+
+.column
+  display: flex
+  flex-direction: column
+
+.icon
+  display: flex
+  align-items: center
+  margin: 10px 0
+
+.icon::before
+  content: ' '
+  background-size: 40px 40px
+  height: 39px
+  width: 40px
+  display: inline-flex
+  margin-right: 10px
+
+.github::before
+  background: url('../images/github.svg') center center no-repeat
+  background-size: 40px 39px
+
+.slides::before
+  background: url('../images/screen.svg') center center no-repeat
+  background-size: 40px 39px
+
+.twitter::before
+  background: url('../images/twitter.svg') center center no-repeat
+  background-size: 39px 40px
+
+a:not(:hover):not(.underline)
+  margin-bottom: 1px;
+  border-bottom: none;
+  :hover
+    margin-bottom: 0;

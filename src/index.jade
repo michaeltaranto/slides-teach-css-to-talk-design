@@ -1,0 +1,616 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Teach CSS to talk like a designer
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+      
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h1.emoji.large 👩‍💻🎓👨‍🎨
+        h1 Teaching CSS to<br/>talk like a designer
+
+      section
+        h2 Developers & designers often<br/>speak different languages
+
+      section
+        h2 CSS gives us the illusion<br/>it understands design
+        br
+        h1.emoji 🐇 <span style="display: inline-block;transform: rotate(180deg)">🎩</span>
+
+      section
+        h2 Taunting us with terms like<br/><code>`line-height`</code> & <code>`baseline`</code>
+
+      section
+        h2 How would you style a<br/>21px heading over 27px line height?
+        
+      section
+        pre
+          code.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+            }
+            
+      section
+        pre
+          code.language-html.
+            &lt;div class="card"&gt;
+              &lt;h1 class="card-heading"&gt;Heading&lt;/h1&gt;
+            &lt;/div&gt;
+          
+      section
+        h1.emoji.large 😯
+        div.row
+          div
+            h6 CSS &ldquo;line-height&rdquo;
+            div.card.baseline
+              h2.card-title.line-height Heading
+          div  
+            h6 Typographic line height
+            div.card.baseline
+              h2.card-title.line-height
+                span.shift Heading
+          
+      section
+        h2 Devs are left to &ldquo;CSS&rdquo; until it works
+        br
+        h1.emoji.large 🤼‍♂️
+      
+      section
+        pre.bullet-toggle
+          code.bullet.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+            }
+          code.bullet.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+              padding-top: 1px;
+            }
+          code.bullet.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+              padding-top: 2px;
+            }
+          code.bullet.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+              padding-top: 3px;
+            }
+          code.bullet.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+              padding-top: 4px;
+            }
+          code.bullet.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+              padding-top: 4px;
+              margin-bottom: -1px;
+            }
+          code.bullet.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+              padding-top: 4px;
+              margin-bottom: -2px;
+            }
+          code.bullet.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+              padding-top: 4px;
+              margin-bottom: -3px;
+            }
+            
+      section
+        h2 System left behind is fragile
+        br
+        h1.emoji.large 🐣
+        
+      section
+        h2 Thrown away the designer&rsquo;s thinking
+        
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h2 Good design is not an accident
+        h4 There&rsquo;s a &lsquo;why&rsquo; for everything
+        
+      section
+        h2 Grid systems, type hierarchy, etc
+        br
+        h1.emoji 📐 🖋  
+      
+      section
+        h2 We start with the best intentions
+        pre
+          code.language-css.
+            @row-height: 9px;
+            @column-width: 60px;
+            @column-gutter: 20px;
+            
+            @heading-size: 21px;
+            @heading-line-height: 27px;
+      
+      section
+        h4
+          pre
+            code.bullet.language-css.
+              .card-heading {
+                font-size: @heading-size;
+                line-height: @heading-line-height;
+                padding-top: 4px;
+                margin-bottom: -3px;
+              }
+        h2.emoji 😓
+        
+      section
+        h2 How can we fix this?
+        br
+        div.row
+          div
+            h6 CSS &ldquo;line-height&rdquo;
+            div.card.baseline
+              h2.card-title.line-height Heading
+          div  
+            h6 Typographic line height
+            div.card.baseline
+              h2.card-title.line-height
+                span.shift Heading
+        
+      section
+        h1.emoji.large 👇
+        br
+        h2 Text needs to move down
+      
+      section
+        h2 Height of the descender*
+        div.card.baseline
+          h2.card-title.descender Heading
+        h6 *not available in CSS
+        h1.emoji 😔
+      
+      section
+        h2 We have to calculate this manually
+        iframe(src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/pixel-nudge/")
+        
+      section
+        pre
+          code.language-css.
+            @heading-descender-height: 3px;
+      
+      section
+        h2 Font centered to line height
+        div.card.baseline
+          h2.card-title.split Heading
+      
+      section
+        h2 Half the difference betweeen<br/><code>line-height</code> and <code>font-size</code>
+        br
+        h4 (27px - 21px) / 2 = 3px
+        
+      section
+        pre
+          code.language-css.
+            @heading-line-height-offset: 3px;
+        
+      section
+        h5
+          pre
+            code.language-css.
+              @heading-offset: (@heading-descender-height + @heading-line-height-offset);
+        h5
+          pre
+            code.language-css.
+              .card-heading {
+                font-size: @heading-size;
+                line-height: @heading-line-height;
+                transform: translateY(@heading-offset);
+              }
+            
+      section
+        h2 Starting to align with the designer&rsquo;s intent
+        div.card.baseline
+          h2.card-title.line-height
+            span.shift Heading
+        h1.emoji 😏
+            
+      section
+        h2 There will be multiple headings
+        
+      section
+        pre
+          code.language-css.
+            .headingText() {
+              font-size: @heading-size;
+              line-height: @heading-line-height;
+              transform: translateY(@heading-offset);
+            }
+
+            .card-heading {
+              .headingText();
+            }
+      
+      section
+        h2 Design and dev can start<br/>talking a common language
+        h2
+          pre
+            code.language-css.
+              .headingText()
+        
+      section
+        h2 &hellip;but solution is hardcoded
+        h5
+          pre
+            code.language-css.
+              /* Design principles */
+              @heading-size: 21px;
+              @heading-line-height: 27px;
+              
+              /* Offset hacks */
+              @heading-descender-height: 3px;
+              @heading-line-height-offset: 3px;
+      
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h2 Designers are still having to<br/>translate principles into pixels
+        br
+        h1.emoji 👩‍🎨 📝 👨‍💻
+      
+      section
+        h2 Let&rsquo;s reverse engineer<br/>what&rsquo;s behind these pixels
+        br
+        h1.emoji.large 👷‍♀️
+      
+      section
+        h2 Line height is simply a row span
+        h5
+          pre
+            code.language-css.
+              @heading-line-height: 27px;
+        
+      section
+        pre
+          code.language-css.
+            @row-height: 9px;
+            
+            .headingText() {
+              font-size: 21px;
+              line-height: (3 * @row-height);
+              transform: translateY(@heading-offset);
+            }    
+      
+      section
+        h2 Where does the font size come from?
+        h5
+          pre
+            code.language-css.
+              @heading-font-size: 21px;
+              
+      section
+        h1(style="font-size: 7em; height: 0.7em; margin: 0 20px; width: 90%; text-align:left") &ldquo;
+        h4 The values in the hierarchy are all a scale of a base size,
+        h4 I tend to work off 10px as it scales cleanly
+        br
+        h1(style="font-size: 7em; height: 0.3em; margin: 0 20px; width: 90%; text-align:right") &rdquo;
+        
+      section
+        pre
+          code.language-css.
+            @base-font-size: 10px;
+            
+            .headingText() {
+              font-size: (2.1 * @base-font-size);
+              line-height: (3 * @row-height);
+              transform: translateY(@heading-offset);
+            }
+          
+      section
+        h2 Extract the principles
+        h5
+          pre
+            code.language-css.
+              /* Design principles */
+              @base-font-size: 10px;
+              @row-height: 9px;
+              @heading-scale: 2.1;
+              @heading-row-span: 3;
+              
+              /* Offset hacks */
+              @heading-descender-height: 3px;
+              @heading-line-height-offset: 3px;
+              @heading-offset: (@heading-descender-height + @heading-line-height-offset);
+            
+      section
+        h2.bullet-toggle
+          span.bullet Recap: Heading at 21px over 27px line height
+          span.bullet Recap: Heading at 2.1x over 3 grid rows
+      
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h2 We&rsquo;re capturing principles rather than pixels
+      
+      section
+        h2 Implement another hierarchy level?
+        
+      section
+        h2 Add support for subheadings
+        h5
+          pre
+            code.language-css.
+              /* Design principles */
+              @subheading-scale: 1.8;
+              @subheading-row-span: 3;
+              
+              /* Offset hacks */
+              @subheading-descender-height: ???;
+              @subheading-line-height-offset: ???;
+              @subheading-offset: ???;
+        
+      section
+        h2 Express the offset as a scale of the type
+        br 
+        h1.emoji.large 👨‍🏫
+      
+      section
+        h2 CSS can help us here &mdash; <code>em</code> units
+        br 
+        h1.emoji.large 🙌
+        
+      section
+        h2 Calculate the descender height as scale
+        iframe(src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/scale-nudge/")
+        
+      section
+        h2 Rather than defining for each level
+        pre
+          code.language-css.
+            @heading-descender-height: ???;
+            @subheading-descender-height: ???;
+              
+      section
+        h2 One descender scale per font family
+        pre
+          code.language-css.
+            @roboto-descender-scale: 0.15;
+        
+      section
+        h6
+          pre
+            code.language-css.
+              /* Offset hacks */
+              @roboto-descender-scale: 0.15;
+              @roboto-offset: @roboto-descender-scale * @base-font-size;
+              
+              @heading-line-height-offset: 3px;
+              @heading-offset: (@roboto-offset * @heading-scale) + @heading-line-height-offset;
+              
+              @subheading-line-height-offset: ???;
+              @subheading-offset: (@roboto-offset * @subheading-scale) + @subheading-line-height-offset;
+        br
+        h4 This is better, but you know&hellip; 😔
+      
+      section
+        h2 Do this for every level of the hierarchy?
+        br
+        h1.emoji.large 🤔
+        
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h1 Basekick
+        h6
+          a(href="https://github.com/michaeltaranto/basekick") (github.com/michaeltaranto/basekick)
+      
+      section
+        h2 Translate design principles into<br/>CSS rules to align type 
+        br
+        h1.emoji 👨‍🎨 👉 👩‍🏫 👉 👨‍💻
+      
+      section
+        pre
+          code.language-css.
+            .headingText() {
+              .basekick(
+                 @heading-scale,
+                 @roboto-descender-scale,
+                 @heading-row-span,
+                 @row-height,
+                 @base-font-size
+              );
+            }
+        
+      section
+        pre
+          code.language-css.
+            .card-heading {
+              font-size: 21px;
+              line-height: 27px;
+              transform: translateY(.27935714em);
+            }
+      
+      section
+        h2 Transform doesn&rsquo;t push neighbouring elements
+      
+      section
+        h2 Preserves CSS properties for semantic use
+        
+      
+      section
+        h2 Ability to edit design primitives confidently
+        pre
+          code.language-css.
+            @heading-scale: 2.1;
+            @heading-row-span: 3;
+            
+            @subheading-scale: 1.8;
+            @subheading-row-span: 3;
+            
+        h1.emoji 👩‍💻 + 👨‍🎨 = 👫
+      
+      section
+        h2 Putting it to the test...
+        iframe(src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/playground/")
+      
+      section
+        pre.bullet-toggle
+          code.bullet.language-css.
+            .basekick(
+               @heading-scale,
+               @roboto-descender-scale,
+               @heading-row-span,
+               @row-height,
+               @base-font-size
+            );
+          code.bullet.language-css.
+            .basekick(
+               @heading-scale,
+               @zapfino-descender-scale,
+               @heading-row-span,
+               @row-height,
+               @base-font-size
+            );
+          code.bullet.language-css.
+            .basekick(
+               @heading-scale,
+               @papyrus-descender-scale,
+               @heading-row-span,
+               @row-height,
+               @base-font-size
+            );
+      
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h2 Design conversations are now <br/>centered around common language
+        br
+        h1.emoji 👌
+        
+      section
+        h2 2½ years into our journey
+        
+      section
+        h2 Hierarchy has grown
+        h6
+          pre
+            code.language-css.
+              @hero-type-row-span: 5;
+              @hero-type-scale: 4.2;
+              
+              @headline-type-row-span: 4;
+              @headline-type-scale: 2.8;
+              
+              @heading-type-row-span: 3;
+              @heading-type-scale: 2.1;
+              
+              @subheading-type-row-span: 3;
+              @subheading-type-scale: 1.8;
+              
+              @standard-type-row-span: 2;
+              @standard-type-scale: 1.4;
+              
+              @small-type-row-span: 2;
+              @small-type-scale: 1.2;
+              
+      section
+        h2 Added responsive variants with ease
+        h5
+          pre
+            code.language-css.
+              @standard-type-row-span: 2;
+              @standard-type-scale: 1.4;
+              
+              @standard-type-row-span-mobile: 3;
+              @standard-type-scale-mobile: 1.8;
+      
+      section
+        h2 System has been adopted in over 10 projects
+        h5 (across multiple frameworks)
+      
+      section
+        h2 Proof is in <a class="underline" href="https://www.seek.com.au">production</a>
+        br
+        h1.emoji.large 🕵️
+      
+      section
+        br
+        h2 Most developers don&rsquo;t know basekick exists
+        br
+        h1.emoji.large 👻
+      
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h2 CSS is speaking the same<br/>language as our designers
+      
+      section
+        h2 Powerful mindset change for both disciplines
+        h5 Striving for a common language everywhere
+      
+      section
+        h1.emoji 💡
+        h2 Apply this thinking to our markup
+        h1
+          pre.tight
+            code.language-html.
+              &lt;/&gt;
+
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h2 Teach HTML to talk design
+        
+      section
+        h2 Component abstractions can help<br/>define a design language
+        br
+        h1.emoji ⚛️
+      
+      section
+        h2
+          pre
+            code.language-html.
+              &lt;Text heading&gt;Heading&lt;/Text&gt;
+      
+      section
+        h2 Rather than discuss code like this:
+        pre
+          code.language-html.
+            &lt;div class="card"&gt;
+              &lt;h1 class="card-heading"&gt;Heading&lt;/h1&gt;
+              &lt;p class="card-body"&gt;The cards content&lt;/p&gt;
+            &lt;/div&gt;
+          
+      section
+        h2 We can more declaratively compose this:
+        pre
+          code.language-html.
+            &lt;Card&gt;
+              &lt;Text heading&gt;My Heading&lt;/Text&gt;
+              &lt;Text&gt;The cards content&lt;/Text&gt;
+            &lt;/Card&gt;
+      
+      section
+        h2 More approachable code
+        br
+        h1.emoji.large 👶
+        
+      section
+        h2 Match designer&rsquo;s intent out of the box
+        br
+        h1.emoji.large 📦
+      
+      section.emphatic(data-bespoke-backdrop="emphatic")
+        h2 Help find your team&rsquo;s design language
+      
+      section
+        div.me
+        div.column
+          h6.icon.twitter
+            a(href="https://twitter.com/michaeltaranto") @michaeltaranto
+          h6.icon.github
+            a(href="https://github.com/michaeltaranto") github.com/michaeltaranto
+          h6.icon.slides
+            a(href="https://bit.ly/teach-css-to-talk-design") bit.ly/teach-css-to-talk-design
+        
+    script(src='build/build.js')
