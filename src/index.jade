@@ -17,7 +17,7 @@ html
         h1 Teaching CSS to<br/>talk like a designer
 
       section
-        h2 Developers & designers often<br/>speak different languages
+        h2 Developers & designers often <span class="lbrFull"></span>speak <span class="lbr600"></span>different languages
 
       section
         h2 CSS gives us the illusion<br/>it understands design
@@ -26,10 +26,10 @@ html
         div.emojiImage.illusion
 
       section
-        h2 Taunting us with terms like<br/><code>`line-height`</code> & <code>`baseline`</code>
+        h2 Taunting us with terms like<br/><code class="inline">`line-height`</code> & <code class="inline">`baseline`</code>
 
       section
-        h2 How would you style a<br/>21px heading over 27px line height?
+        h2 How would you style a <span class="lbrFull"></span><span class="lbr600"></span>21px heading over <span class="lbr600"></span>27px line height?
         
       section
         pre
@@ -61,7 +61,7 @@ html
                 span.shift Heading
           
       section
-        h2 Devs are left to &ldquo;CSS&rdquo; until it works
+        h2 Devs are left to <span class="lbr600"></span>&ldquo;CSS&rdquo; until it works
         br
         //- h1.emoji.large 🤼‍♂️
         div.emojiImage.wrestle
@@ -126,10 +126,10 @@ html
         div.emojiImage.chickegg
         
       section
-        h2 Thrown away the designer&rsquo;s thinking
+        h2 Thrown away the <span class="lbr600"></span>designer&rsquo;s thinking
         
       section.emphatic(data-bespoke-backdrop="emphatic")
-        h2 Good design is not an accident
+        h2 Good design is <span class="lbr600"></span>not an accident
         h4 There&rsquo;s a &lsquo;why&rsquo; for everything
         
       section
@@ -139,7 +139,7 @@ html
         div.emojiImage.grid
       
       section
-        h2 We start with the best intentions
+        h2 We start with <span class="lbr600"></span>the best intentions
         pre
           code.language-css.
             @row-height: 9px;
@@ -150,15 +150,14 @@ html
             @heading-line-height: 27px;
       
       section
-        h4
-          pre
-            code.bullet.language-css.
-              .card-heading {
-                font-size: @heading-size;
-                line-height: @heading-line-height;
-                padding-top: 4px;
-                margin-bottom: -3px;
-              }
+        pre
+          code.bullet.language-css.
+            .card-heading {
+              font-size: @heading-size;
+              line-height: @heading-line-height;
+              padding-top: 4px;
+              margin-bottom: -3px;
+            }
         //- h2.emoji 😓
         div.emojiImage.sad
         
@@ -191,7 +190,7 @@ html
         div.emojiImage.disappointed
       
       section
-        h2 We have to calculate this manually
+        h2 We have to calculate <span class="lbr600"></span>this manually
         iframe(src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/pixel-nudge/")
         
       section
@@ -205,7 +204,7 @@ html
           h2.card-title.split Heading
       
       section
-        h2 Half the difference betweeen<br/><code>line-height</code> and <code>font-size</code>
+        h2 Half the difference betweeen <span class="lbrFull"></span><code class="inline">line-height</code> <span class="lbr600"></span>and <code class="inline">font-size</code>
         br
         h4 (27px - 21px) / 2 = 3px
         
@@ -273,7 +272,7 @@ html
               @heading-line-height-offset: 3px;
       
       section.emphatic(data-bespoke-backdrop="emphatic")
-        h2 Designers are still having to<br/>translate principles into pixels
+        h2 Designers are still <span class="lbr600"></span>having to <span class="lbrFull"></span>translate <span class="lbr600"></span>principles into pixels
         br
         //- h1.emoji 👩‍🎨 📝 👨‍💻
         div.emojiImage.designspec
@@ -285,7 +284,7 @@ html
         div.emojiImage.engineer
       
       section
-        h2 Line height is simply a row span
+        h2 Line height is <span class="lbr600"></span>simply a row span
         h5
           pre
             code.language-css.
@@ -303,7 +302,7 @@ html
             }    
       
       section
-        h2 Where does the font size come from?
+        h2 Where does the <span class="lbr600"></span>font size come from?
         h5
           pre
             code.language-css.
@@ -311,8 +310,7 @@ html
               
       section
         h1(style="font-size: 7em; height: 0.7em; margin: 0 20px; width: 90%; text-align:left") &ldquo;
-        h4 The values in the hierarchy are all a scale of a base size,
-        h4 I tend to work off 10px as it scales cleanly
+        h4 The values in the hierarchy are all <span class="lbr600"></span>a scale of a base size, <span class="lbrFull"></span>I tend to <span class="lbr600"></span>work off 10px as it scales cleanly
         br
         h1(style="font-size: 7em; height: 0.3em; margin: 0 20px; width: 90%; text-align:right") &rdquo;
         
@@ -341,6 +339,9 @@ html
               /* Offset hacks */
               @heading-descender-height: 3px;
               @heading-line-height-offset: 3px;
+        h5
+          pre
+            code.language-css.
               @heading-offset: (@heading-descender-height + @heading-line-height-offset);
             
       section
@@ -375,7 +376,7 @@ html
         div.emojiImage.teach
       
       section
-        h2 CSS can help us here &mdash; <code>em</code> units
+        h2 CSS can help us <span class="lbr600"></span>here &mdash; <code class="inline">em</code> units
         br 
         //- h1.emoji.large 🙌
         div.emojiImage.raisehands
@@ -385,14 +386,14 @@ html
         iframe(src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/scale-nudge/")
         
       section
-        h2 Rather than defining for each level
+        h2 Rather than defining <span class="lbr600"></span>for each level
         pre
           code.language-css.
             @heading-descender-height: ???;
             @subheading-descender-height: ???;
               
       section
-        h2 One descender scale per font family
+        h2 One descender scale <span class="lbr600"></span>per font family
         pre
           code.language-css.
             @roboto-descender-scale: 0.15;
@@ -415,7 +416,7 @@ html
         h4 This is better, but you know&hellip; <span class="emojiImage disappointedSmall"></span>
       
       section
-        h2 Do this for every level of the hierarchy?
+        h2 Do this for every level <span class="lbr600"></span>of the hierarchy?
         br
         //- h1.emoji.large 🤔
         div.emojiImage.thinking
@@ -426,7 +427,7 @@ html
           a(href="https://github.com/michaeltaranto/basekick") (github.com/michaeltaranto/basekick)
       
       section
-        h2 Translate design principles into<br/>CSS rules to align type 
+        h2 Translate design <span class="lbr600"></span>principles into <span class="lbrFull"></span>CSS <span class="lbr600"></span>rules to align type 
         br
         //- h1.emoji 👨‍🎨 👉 👩‍🏫 👉 👨‍💻
         div.emojiImage.translation
@@ -505,7 +506,7 @@ html
             );
       
       section.emphatic(data-bespoke-backdrop="emphatic")
-        h2 Design conversations are now <br/>centered around common language
+        h2 Design conversations are <span class="lbr600"></span>now <span class="lbrFull"></span>centered around <span class="lbr600"></span>common language
         br
         //- h1.emoji 👌
         div.emojiImage.okhand
@@ -537,7 +538,7 @@ html
               @small-type-scale: 1.2;
               
       section
-        h2 Added responsive variants with ease
+        h2 Added responsive <span class="lbr600"></span>variants with ease
         h5
           pre
             code.language-css.
@@ -548,18 +549,21 @@ html
               @standard-type-scale-mobile: 1.8;
       
       section
-        h2 System has been adopted in over 10 projects
+        h2 System has been adopted <span class="lbr600"></span>in over 10 projects
         h5 (across multiple frameworks)
       
       section
-        h2 Proof is in <a class="underline" href="https://www.seek.com.au">production</a>
+        h2 Proof is in <a class="underline" href="https://www.seek.com.au", target="_blank">production</a>
         br
         //- h1.emoji.large 🕵️
         div.emojiImage.detective
       
       section
+        a(href="https://www.seek.com.au", target="_blank").seekbaseline
+      
+      section
         br
-        h2 Most developers don&rsquo;t know basekick exists
+        h2 Most developers don&rsquo;t <span class="lbr600"></span>know basekick exists
         br
         //- h1.emoji.large 👻
         div.emojiImage.ghost
@@ -569,12 +573,12 @@ html
       
       section
         h2 Powerful mindset change for both disciplines
-        h5 Striving for a common language everywhere
+        h5 Striving for a common <span class="lbr600"></span>language everywhere
       
       section
         //- h1.emoji 💡
         div.emojiImage.bulb
-        h2 Apply this thinking to our markup
+        h2 Apply this thinking <span class="lbr600"></span>to our markup
         h1
           pre.tight
             code.language-html.
@@ -584,19 +588,18 @@ html
         h2 Teach HTML to talk design
         
       section
-        h2 Component abstractions can help<br/>define a design language
+        h2 Component abstractions <span class="lbr600"></span>can help <span class="lbrFull"></span>define <span class="lbr600"></span>a design language
         br
         //- h1.emoji ⚛️
         div.emojiImage.atom
       
       section
-        h2
-          pre
-            code.language-html.
-              &lt;Text heading&gt;Heading&lt;/Text&gt;
+        pre
+          code.language-html.
+            &lt;Text heading&gt;Heading&lt;/Text&gt;
       
       section
-        h2 Rather than discuss code like this:
+        h2 Rather than discuss <span class="lbr600"></span>code like this:
         pre
           code.language-html.
             &lt;div class="card"&gt;
@@ -621,7 +624,7 @@ html
         
         
       section
-        h2 Match designer&rsquo;s intent out of the box
+        h2 Match designer&rsquo;s intent <span class="lbr600"></span>out of the box
         br
         //- h1.emoji.large 📦
         div.emojiImage.package
