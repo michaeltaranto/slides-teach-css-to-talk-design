@@ -9,21 +9,21 @@
   <body>
     <article>
       <section data-bespoke-backdrop="emphatic" class="emphatic">
-        <h1 class="emoji large">👩‍💻🎓👨‍🎨</h1>
+        <div class="emojiImage title"></div>
         <h1>Teaching CSS to<br/>talk like a designer</h1>
       </section>
       <section>
-        <h2>Developers & designers often<br/>speak different languages</h2>
+        <h2>Developers & designers often <span class="lbrFull"></span>speak <span class="lbr600"></span>different languages</h2>
       </section>
       <section>
         <h2>CSS gives us the illusion<br/>it understands design</h2><br>
-        <h1 class="emoji">🐇 <span style="display: inline-block;transform: rotate(180deg)">🎩</span></h1>
+        <div class="emojiImage illusion"></div>
       </section>
       <section>
-        <h2>Taunting us with terms like<br/><code>`line-height`</code> & <code>`baseline`</code></h2>
+        <h2>Taunting us with terms like<br/><code class="inline">`line-height`</code> & <code class="inline">`baseline`</code></h2>
       </section>
       <section>
-        <h2>How would you style a<br/>21px heading over 27px line height?</h2>
+        <h2>How would you style a <span class="lbrFull"></span><span class="lbr600"></span>21px heading over <span class="lbr600"></span>27px line height?</h2>
       </section>
       <section>
         <pre><code class="language-css">.card-heading {
@@ -39,7 +39,7 @@
 </code></pre>
       </section>
       <section>
-        <h1 class="emoji large">😯</h1>
+        <div class="emojiImage surprise"></div>
         <div class="row">
           <div>
             <h6>CSS &ldquo;line-height&rdquo;</h6>
@@ -56,8 +56,8 @@
         </div>
       </section>
       <section>
-        <h2>Devs are left to &ldquo;CSS&rdquo; until it works</h2><br>
-        <h1 class="emoji large">🤼‍♂️</h1>
+        <h2>Devs are left to <span class="lbr600"></span>&ldquo;CSS&rdquo; until it works</h2><br>
+        <div class="emojiImage wrestle"></div>
       </section>
       <section>
         <pre class="bullet-toggle"><code class="bullet language-css">.card-heading {
@@ -99,21 +99,21 @@
       </section>
       <section>
         <h2>System left behind is fragile</h2><br>
-        <h1 class="emoji large">🐣</h1>
+        <div class="emojiImage chickegg"></div>
       </section>
       <section>
-        <h2>Thrown away the designer&rsquo;s thinking</h2>
+        <h2>Thrown away the <span class="lbr600"></span>designer&rsquo;s thinking</h2>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic">
-        <h2>Good design is not an accident</h2>
+        <h2>Good design is <span class="lbr600"></span>not an accident</h2>
         <h4>There&rsquo;s a &lsquo;why&rsquo; for everything</h4>
       </section>
       <section>
         <h2>Grid systems, type hierarchy, etc</h2><br>
-        <h1 class="emoji">📐 🖋  </h1>
+        <div class="emojiImage grid"></div>
       </section>
       <section>
-        <h2>We start with the best intentions</h2>
+        <h2>We start with <span class="lbr600"></span>the best intentions</h2>
         <pre><code class="language-css">@row-height: 9px;
 @column-width: 60px;
 @column-gutter: 20px;
@@ -123,15 +123,13 @@
 </code></pre>
       </section>
       <section>
-        <h4>
-          <pre><code class="bullet language-css">.card-heading {
+        <pre><code class="bullet language-css">.card-heading {
   font-size: @heading-size;
   line-height: @heading-line-height;
   padding-top: 4px;
   margin-bottom: -3px;
 }</code></pre>
-        </h4>
-        <h2 class="emoji">😓</h2>
+        <div class="emojiImage sad"></div>
       </section>
       <section>
         <h2>How can we fix this?</h2><br>
@@ -151,7 +149,7 @@
         </div>
       </section>
       <section>
-        <h1 class="emoji large">👇</h1><br>
+        <div class="emojiImage pointdown"></div><br>
         <h2>Text needs to move down</h2>
       </section>
       <section>
@@ -160,10 +158,10 @@
           <h2 class="card-title descender">Heading</h2>
         </div>
         <h6>*not available in CSS</h6>
-        <h1 class="emoji">😔</h1>
+        <div class="emojiImage disappointed"></div>
       </section>
       <section>
-        <h2>We have to calculate this manually</h2>
+        <h2>We have to calculate <span class="lbr600"></span>this manually</h2>
         <iframe src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/pixel-nudge/"></iframe>
       </section>
       <section>
@@ -177,7 +175,7 @@
         </div>
       </section>
       <section>
-        <h2>Half the difference betweeen<br/><code>line-height</code> and <code>font-size</code></h2><br>
+        <h2>Half the difference betweeen <span class="lbrFull"></span><code class="inline">line-height</code> <span class="lbr600"></span>and <code class="inline">font-size</code></h2><br>
         <h4>(27px - 21px) / 2 = 3px</h4>
       </section>
       <section>
@@ -202,7 +200,7 @@
         <div class="card baseline">
           <h2 class="card-title line-height"><span class="shift">Heading</span></h2>
         </div>
-        <h1 class="emoji">😏</h1>
+        <div class="emojiImage sly"></div>
       </section>
       <section>
         <h2>There will be multiple headings</h2>
@@ -240,15 +238,15 @@
         </h5>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic">
-        <h2>Designers are still having to<br/>translate principles into pixels</h2><br>
-        <h1 class="emoji">👩‍🎨 📝 👨‍💻</h1>
+        <h2>Designers are still <span class="lbr600"></span>having to <span class="lbrFull"></span>translate <span class="lbr600"></span>principles into pixels</h2><br>
+        <div class="emojiImage designspec"></div>
       </section>
       <section>
         <h2>Let&rsquo;s reverse engineer<br/>what&rsquo;s behind these pixels</h2><br>
-        <h1 class="emoji large">👷‍♀️</h1>
+        <div class="emojiImage engineer"></div>
       </section>
       <section>
-        <h2>Line height is simply a row span</h2>
+        <h2>Line height is <span class="lbr600"></span>simply a row span</h2>
         <h5>
           <pre><code class="language-css">@heading-line-height: 27px;
 </code></pre>
@@ -265,7 +263,7 @@
 </code></pre>
       </section>
       <section>
-        <h2>Where does the font size come from?</h2>
+        <h2>Where does the <span class="lbr600"></span>font size come from?</h2>
         <h5>
           <pre><code class="language-css">@heading-font-size: 21px;
 </code></pre>
@@ -273,8 +271,7 @@
       </section>
       <section>
         <h1 style="font-size: 7em; height: 0.7em; margin: 0 20px; width: 90%; text-align:left">&ldquo;</h1>
-        <h4>The values in the hierarchy are all a scale of a base size,</h4>
-        <h4>I tend to work off 10px as it scales cleanly</h4><br>
+        <h4>The values in the hierarchy are all <span class="lbr600"></span>a scale of a base size, <span class="lbrFull"></span>I tend to <span class="lbr600"></span>work off 10px as it scales cleanly</h4><br>
         <h1 style="font-size: 7em; height: 0.3em; margin: 0 20px; width: 90%; text-align:right">&rdquo;</h1>
       </section>
       <section>
@@ -298,8 +295,10 @@
 
 /* Offset hacks */
 @heading-descender-height: 3px;
-@heading-line-height-offset: 3px;
-@heading-offset: (@heading-descender-height + @heading-line-height-offset);
+@heading-line-height-offset: 3px;</code></pre>
+        </h5>
+        <h5>
+          <pre><code class="language-css">@heading-offset: (@heading-descender-height + @heading-line-height-offset);
 </code></pre>
         </h5>
       </section>
@@ -328,24 +327,24 @@
       </section>
       <section>
         <h2>Express the offset as a scale of the type</h2><br>
-        <h1 class="emoji large">👨‍🏫</h1>
+        <div class="emojiImage teach"></div>
       </section>
       <section>
-        <h2>CSS can help us here &mdash; <code>em</code> units</h2><br>
-        <h1 class="emoji large">🙌</h1>
+        <h2>CSS can help us <span class="lbr600"></span>here &mdash; <code class="inline">em</code> units</h2><br>
+        <div class="emojiImage raisehands"></div>
       </section>
       <section>
         <h2>Calculate the descender height as scale</h2>
         <iframe src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/scale-nudge/"></iframe>
       </section>
       <section>
-        <h2>Rather than defining for each level</h2>
+        <h2>Rather than defining <span class="lbr600"></span>for each level</h2>
         <pre><code class="language-css">@heading-descender-height: ???;
 @subheading-descender-height: ???;
 </code></pre>
       </section>
       <section>
-        <h2>One descender scale per font family</h2>
+        <h2>One descender scale <span class="lbr600"></span>per font family</h2>
         <pre><code class="language-css">@roboto-descender-scale: 0.15;
 </code></pre>
       </section>
@@ -361,19 +360,19 @@
 @subheading-line-height-offset: ???;
 @subheading-offset: (@roboto-offset * @subheading-scale) + @subheading-line-height-offset;</code></pre>
         </h6><br>
-        <h4>This is better, but you know&hellip; 😔</h4>
+        <h4>This is better, but you know&hellip; <span class="emojiImage disappointedSmall"></span></h4>
       </section>
       <section>
-        <h2>Do this for every level of the hierarchy?</h2><br>
-        <h1 class="emoji large">🤔</h1>
+        <h2>Do this for every level <span class="lbr600"></span>of the hierarchy?</h2><br>
+        <div class="emojiImage thinking"></div>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic">
         <h1>Basekick</h1>
         <h6><a href="https://github.com/michaeltaranto/basekick">(github.com/michaeltaranto/basekick)</a></h6>
       </section>
       <section>
-        <h2>Translate design principles into<br/>CSS rules to align type </h2><br>
-        <h1 class="emoji">👨‍🎨 👉 👩‍🏫 👉 👨‍💻</h1>
+        <h2>Translate design <span class="lbr600"></span>principles into <span class="lbrFull"></span>CSS <span class="lbr600"></span>rules to align type </h2><br>
+        <div class="emojiImage translation"></div>
       </section>
       <section>
         <pre><code class="language-css">.headingText() {
@@ -409,7 +408,7 @@
 @subheading-scale: 1.8;
 @subheading-row-span: 3;
 </code></pre>
-        <h1 class="emoji">👩‍💻 + 👨‍🎨 = 👫</h1>
+        <div class="emojiImage workingTogether"></div>
       </section>
       <section>
         <h2>Putting it to the test...</h2>
@@ -438,8 +437,8 @@
 </code></pre>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic">
-        <h2>Design conversations are now <br/>centered around common language</h2><br>
-        <h1 class="emoji">👌</h1>
+        <h2>Design conversations are <span class="lbr600"></span>now <span class="lbrFull"></span>centered around <span class="lbr600"></span>common language</h2><br>
+        <div class="emojiImage okhand"></div>
       </section>
       <section>
         <h2>2½ years into our journey</h2>
@@ -468,7 +467,7 @@
         </h6>
       </section>
       <section>
-        <h2>Added responsive variants with ease</h2>
+        <h2>Added responsive <span class="lbr600"></span>variants with ease</h2>
         <h5>
           <pre><code class="language-css">@standard-type-row-span: 2;
 @standard-type-scale: 1.4;
@@ -479,27 +478,27 @@
         </h5>
       </section>
       <section>
-        <h2>System has been adopted in over 10 projects</h2>
+        <h2>System has been adopted <span class="lbr600"></span>in over 10 projects</h2>
         <h5>(across multiple frameworks)</h5>
       </section>
       <section>
         <h2>Proof is in <a class="underline" href="https://www.seek.com.au">production</a></h2><br>
-        <h1 class="emoji large">🕵️</h1>
+        <div class="emojiImage detective"></div>
       </section>
       <section><br>
-        <h2>Most developers don&rsquo;t know basekick exists</h2><br>
-        <h1 class="emoji large">👻</h1>
+        <h2>Most developers don&rsquo;t <span class="lbr600"></span>know basekick exists</h2><br>
+        <div class="emojiImage ghost"></div>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic">
         <h2>CSS is speaking the same<br/>language as our designers</h2>
       </section>
       <section>
         <h2>Powerful mindset change for both disciplines</h2>
-        <h5>Striving for a common language everywhere</h5>
+        <h5>Striving for a common <span class="lbr600"></span>language everywhere</h5>
       </section>
       <section>
-        <h1 class="emoji">💡</h1>
-        <h2>Apply this thinking to our markup</h2>
+        <div class="emojiImage bulb"></div>
+        <h2>Apply this thinking <span class="lbr600"></span>to our markup</h2>
         <h1>
           <pre class="tight"><code class="language-html">&lt;/&gt;
 </code></pre>
@@ -509,17 +508,15 @@
         <h2>Teach HTML to talk design</h2>
       </section>
       <section>
-        <h2>Component abstractions can help<br/>define a design language</h2><br>
-        <h1 class="emoji">⚛️</h1>
+        <h2>Component abstractions <span class="lbr600"></span>can help <span class="lbrFull"></span>define <span class="lbr600"></span>a design language</h2><br>
+        <div class="emojiImage atom"></div>
       </section>
       <section>
-        <h2>
-          <pre><code class="language-html">&lt;Text heading&gt;Heading&lt;/Text&gt;
+        <pre><code class="language-html">&lt;Text heading&gt;Heading&lt;/Text&gt;
 </code></pre>
-        </h2>
       </section>
       <section>
-        <h2>Rather than discuss code like this:</h2>
+        <h2>Rather than discuss <span class="lbr600"></span>code like this:</h2>
         <pre><code class="language-html">&lt;div class="card"&gt;
   &lt;h1 class="card-heading"&gt;Heading&lt;/h1&gt;
   &lt;p class="card-body"&gt;The cards content&lt;/p&gt;
@@ -536,11 +533,11 @@
       </section>
       <section>
         <h2>More approachable code</h2><br>
-        <h1 class="emoji large">👶</h1>
+        <div class="emojiImage baby"></div>
       </section>
       <section>
-        <h2>Match designer&rsquo;s intent out of the box</h2><br>
-        <h1 class="emoji large">📦</h1>
+        <h2>Match designer&rsquo;s intent <span class="lbr600"></span>out of the box</h2><br>
+        <div class="emojiImage package"></div>
       </section>
       <section data-bespoke-backdrop="emphatic" class="emphatic">
         <h2>Help find your team&rsquo;s design language</h2>
