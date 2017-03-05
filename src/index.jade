@@ -12,7 +12,8 @@ html
     article
       
       section.emphatic(data-bespoke-backdrop="emphatic")
-        h1.emoji.large 👩‍💻🎓👨‍🎨
+        //- h1.emoji.large 👩‍💻🎓👨‍🎨
+        div.emojiImage.title
         h1 Teaching CSS to<br/>talk like a designer
 
       section
@@ -21,7 +22,8 @@ html
       section
         h2 CSS gives us the illusion<br/>it understands design
         br
-        h1.emoji 🐇 <span style="display: inline-block;transform: rotate(180deg)">🎩</span>
+        //- h1.emoji 🐇 <span style="display: inline-block;transform: rotate(180deg)">🎩</span>
+        div.emojiImage.illusion
 
       section
         h2 Taunting us with terms like<br/><code>`line-height`</code> & <code>`baseline`</code>
@@ -45,7 +47,8 @@ html
             &lt;/div&gt;
           
       section
-        h1.emoji.large 😯
+        //- h1.emoji.large 😯
+        div.emojiImage.surprise
         div.row
           div
             h6 CSS &ldquo;line-height&rdquo;
@@ -60,7 +63,8 @@ html
       section
         h2 Devs are left to &ldquo;CSS&rdquo; until it works
         br
-        h1.emoji.large 🤼‍♂️
+        //- h1.emoji.large 🤼‍♂️
+        div.emojiImage.wrestle
       
       section
         pre.bullet-toggle
@@ -118,7 +122,8 @@ html
       section
         h2 System left behind is fragile
         br
-        h1.emoji.large 🐣
+        //- h1.emoji.large 🐣
+        div.emojiImage.chickegg
         
       section
         h2 Thrown away the designer&rsquo;s thinking
@@ -130,7 +135,8 @@ html
       section
         h2 Grid systems, type hierarchy, etc
         br
-        h1.emoji 📐 🖋  
+        //- h1.emoji 📐 🖋  
+        div.emojiImage.grid
       
       section
         h2 We start with the best intentions
@@ -153,7 +159,8 @@ html
                 padding-top: 4px;
                 margin-bottom: -3px;
               }
-        h2.emoji 😓
+        //- h2.emoji 😓
+        div.emojiImage.sad
         
       section
         h2 How can we fix this?
@@ -170,7 +177,8 @@ html
                 span.shift Heading
         
       section
-        h1.emoji.large 👇
+        //- h1.emoji.large 👇
+        div.emojiImage.pointdown
         br
         h2 Text needs to move down
       
@@ -179,7 +187,8 @@ html
         div.card.baseline
           h2.card-title.descender Heading
         h6 *not available in CSS
-        h1.emoji 😔
+        //- h1.emoji 😔
+        div.emojiImage.disappointed
       
       section
         h2 We have to calculate this manually
@@ -224,7 +233,8 @@ html
         div.card.baseline
           h2.card-title.line-height
             span.shift Heading
-        h1.emoji 😏
+        //- h1.emoji 😏
+        div.emojiImage.sly
             
       section
         h2 There will be multiple headings
@@ -265,12 +275,14 @@ html
       section.emphatic(data-bespoke-backdrop="emphatic")
         h2 Designers are still having to<br/>translate principles into pixels
         br
-        h1.emoji 👩‍🎨 📝 👨‍💻
+        //- h1.emoji 👩‍🎨 📝 👨‍💻
+        div.emojiImage.designspec
       
       section
         h2 Let&rsquo;s reverse engineer<br/>what&rsquo;s behind these pixels
         br
-        h1.emoji.large 👷‍♀️
+        //- h1.emoji.large 👷‍♀️
+        div.emojiImage.engineer
       
       section
         h2 Line height is simply a row span
@@ -359,13 +371,15 @@ html
       section
         h2 Express the offset as a scale of the type
         br 
-        h1.emoji.large 👨‍🏫
+        //- h1.emoji.large 👨‍🏫
+        div.emojiImage.teach
       
       section
         h2 CSS can help us here &mdash; <code>em</code> units
         br 
-        h1.emoji.large 🙌
-        
+        //- h1.emoji.large 🙌
+        div.emojiImage.raisehands
+          
       section
         h2 Calculate the descender height as scale
         iframe(src="https://michaeltaranto.github.io/slides-teach-css-to-talk-design/examples/scale-nudge/")
@@ -397,12 +411,14 @@ html
               @subheading-line-height-offset: ???;
               @subheading-offset: (@roboto-offset * @subheading-scale) + @subheading-line-height-offset;
         br
-        h4 This is better, but you know&hellip; 😔
+        //- h4 This is better, but you know&hellip; 😔
+        h4 This is better, but you know&hellip; <span class="emojiImage disappointedSmall"></span>
       
       section
         h2 Do this for every level of the hierarchy?
         br
-        h1.emoji.large 🤔
+        //- h1.emoji.large 🤔
+        div.emojiImage.thinking
         
       section.emphatic(data-bespoke-backdrop="emphatic")
         h1 Basekick
@@ -412,7 +428,8 @@ html
       section
         h2 Translate design principles into<br/>CSS rules to align type 
         br
-        h1.emoji 👨‍🎨 👉 👩‍🏫 👉 👨‍💻
+        //- h1.emoji 👨‍🎨 👉 👩‍🏫 👉 👨‍💻
+        div.emojiImage.translation
       
       section
         pre
@@ -453,7 +470,8 @@ html
             @subheading-scale: 1.8;
             @subheading-row-span: 3;
             
-        h1.emoji 👩‍💻 + 👨‍🎨 = 👫
+        //- h1.emoji 👩‍💻 + 👨‍🎨 = 👫
+        div.emojiImage.workingTogether
       
       section
         h2 Putting it to the test...
@@ -489,7 +507,8 @@ html
       section.emphatic(data-bespoke-backdrop="emphatic")
         h2 Design conversations are now <br/>centered around common language
         br
-        h1.emoji 👌
+        //- h1.emoji 👌
+        div.emojiImage.okhand
         
       section
         h2 2½ years into our journey
@@ -535,13 +554,15 @@ html
       section
         h2 Proof is in <a class="underline" href="https://www.seek.com.au">production</a>
         br
-        h1.emoji.large 🕵️
+        //- h1.emoji.large 🕵️
+        div.emojiImage.detective
       
       section
         br
         h2 Most developers don&rsquo;t know basekick exists
         br
-        h1.emoji.large 👻
+        //- h1.emoji.large 👻
+        div.emojiImage.ghost
       
       section.emphatic(data-bespoke-backdrop="emphatic")
         h2 CSS is speaking the same<br/>language as our designers
@@ -551,7 +572,8 @@ html
         h5 Striving for a common language everywhere
       
       section
-        h1.emoji 💡
+        //- h1.emoji 💡
+        div.emojiImage.bulb
         h2 Apply this thinking to our markup
         h1
           pre.tight
@@ -564,7 +586,8 @@ html
       section
         h2 Component abstractions can help<br/>define a design language
         br
-        h1.emoji ⚛️
+        //- h1.emoji ⚛️
+        div.emojiImage.atom
       
       section
         h2
@@ -593,12 +616,15 @@ html
       section
         h2 More approachable code
         br
-        h1.emoji.large 👶
+        //- h1.emoji.large 👶
+        div.emojiImage.baby
+        
         
       section
         h2 Match designer&rsquo;s intent out of the box
         br
-        h1.emoji.large 📦
+        //- h1.emoji.large 📦
+        div.emojiImage.package
       
       section.emphatic(data-bespoke-backdrop="emphatic")
         h2 Help find your team&rsquo;s design language
